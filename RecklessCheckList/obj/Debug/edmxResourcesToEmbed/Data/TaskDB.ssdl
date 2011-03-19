@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecklessCheckListModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RecklessCheckListModelStoreContainer">
+    <EntitySet Name="TASK" EntityType="RecklessCheckListModel.Store.TASK" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TASK_VALUE" EntityType="RecklessCheckListModel.Store.TASK_VALUE" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TASK_TASK_VALUE" Association="RecklessCheckListModel.Store.FK_TASK_TASK_VALUE">
+      <End Role="TASK_VALUE" EntitySet="TASK_VALUE" />
+      <End Role="TASK" EntitySet="TASK" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TASK">
+    <Key>
+      <PropertyRef Name="TASK_ID" />
+    </Key>
+    <Property Name="TASK_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TASK_VALUE_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TASK_VALUE">
+    <Key>
+      <PropertyRef Name="TASK_VALUE_ID" />
+    </Key>
+    <Property Name="TASK_VALUE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_TASK_TASK_VALUE">
+    <End Role="TASK_VALUE" Type="RecklessCheckListModel.Store.TASK_VALUE" Multiplicity="1" />
+    <End Role="TASK" Type="RecklessCheckListModel.Store.TASK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TASK_VALUE">
+        <PropertyRef Name="TASK_VALUE_ID" />
+      </Principal>
+      <Dependent Role="TASK">
+        <PropertyRef Name="TASK_VALUE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

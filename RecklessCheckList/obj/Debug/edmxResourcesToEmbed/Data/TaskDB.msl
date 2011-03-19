@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecklessCheckListModelStoreContainer" CdmEntityContainer="RecklessCheckListEntities">
+    <EntitySetMapping Name="TASKs">
+      <EntityTypeMapping TypeName="RecklessCheckListModel.TASK">
+        <MappingFragment StoreEntitySet="TASK">
+          <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TASK_VALUE_ID" ColumnName="TASK_VALUE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TASK_VALUE">
+      <EntityTypeMapping TypeName="RecklessCheckListModel.TASK_VALUE">
+        <MappingFragment StoreEntitySet="TASK_VALUE">
+          <ScalarProperty Name="TASK_VALUE_ID" ColumnName="TASK_VALUE_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

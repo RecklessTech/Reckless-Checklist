@@ -1,0 +1,29 @@
+﻿@model RecklessCheckList.Models.TaskList
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="grid_12"><h2>Check List Name</h2></div>
+<div class="grid_12">
+    <div class="grid_8 alpha">
+        <ul id="taskList" >
+            @foreach (var task in Model.Tasks)
+            {
+                <li id="TaskId-@task.Id" class="@task.Value">@task.Name</li>
+        }
+        </ul>
+    </div>
+    <div class="grid_4 omega">
+        Info Here
+    </div>
+</div>
+
+
+
+
+<div class="grid_2">Add a New Task:</div>
+<div class="grid_2">@Html.TextBox("addTaskText")</div>
+<div class="grid_8"></div>
+
+

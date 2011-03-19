@@ -1,0 +1,5 @@
+c:\users\rob\documents\visual studio 2010\Projects\RecklessCheckList\RecklessCheckList\bin\RecklessCheckList.dll
+c:\users\rob\documents\visual studio 2010\Projects\RecklessCheckList\RecklessCheckList\bin\RecklessCheckList.pdb
+c:\users\rob\documents\visual studio 2010\Projects\RecklessCheckList\RecklessCheckList\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rob\documents\visual studio 2010\Projects\RecklessCheckList\RecklessCheckList\obj\Debug\RecklessCheckList.dll
+c:\users\rob\documents\visual studio 2010\Projects\RecklessCheckList\RecklessCheckList\obj\Debug\RecklessCheckList.pdb

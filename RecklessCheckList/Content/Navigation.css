@@ -1,0 +1,18 @@
+﻿.navPanel {
+	
+	background-color: #8FC73E;
+	border-color: White;
+	padding: 10px 0;
+}
+
+.backgroundPanel {
+	
+	background-color: Red;
+	border-color: White;
+}
+
+.navBar {
+    background-image: url('/Content/Images/bg_nav_site.png');
+    background-repeat: repeat-x;
+    height:50px;
+}

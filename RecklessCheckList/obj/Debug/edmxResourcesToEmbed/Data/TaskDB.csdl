@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecklessCheckListModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="RecklessCheckListEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TASKs" EntityType="RecklessCheckListModel.TASK" />
+    <EntitySet Name="TASK_VALUE" EntityType="RecklessCheckListModel.TASK_VALUE" />
+    <AssociationSet Name="FK_TASK_TASK_VALUE" Association="RecklessCheckListModel.FK_TASK_TASK_VALUE">
+      <End Role="TASK_VALUE" EntitySet="TASK_VALUE" />
+      <End Role="TASK" EntitySet="TASKs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TASK">
+    <Key>
+      <PropertyRef Name="TASK_ID" />
+    </Key>
+    <Property Name="TASK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TASK_VALUE_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TASK_VALUE" Relationship="RecklessCheckListModel.FK_TASK_TASK_VALUE" FromRole="TASK" ToRole="TASK_VALUE" />
+  </EntityType>
+  <EntityType Name="TASK_VALUE">
+    <Key>
+      <PropertyRef Name="TASK_VALUE_ID" />
+    </Key>
+    <Property Name="TASK_VALUE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TASKs" Relationship="RecklessCheckListModel.FK_TASK_TASK_VALUE" FromRole="TASK_VALUE" ToRole="TASK" />
+  </EntityType>
+  <Association Name="FK_TASK_TASK_VALUE">
+    <End Role="TASK_VALUE" Type="RecklessCheckListModel.TASK_VALUE" Multiplicity="1" />
+    <End Role="TASK" Type="RecklessCheckListModel.TASK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TASK_VALUE">
+        <PropertyRef Name="TASK_VALUE_ID" />
+      </Principal>
+      <Dependent Role="TASK">
+        <PropertyRef Name="TASK_VALUE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

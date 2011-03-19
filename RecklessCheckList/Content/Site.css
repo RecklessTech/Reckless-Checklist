@@ -1,0 +1,48 @@
+﻿
+/* Text Events */
+
+ul
+{
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+}
+
+li  {
+    background-image: url('/Content/Images/Icons/Blue Ball.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 5px 0 5px 35px;
+    margin: .4em 0;
+    cursor: default;
+}
+
+li.Deleted  {
+    background-image: url('/Content/Images/Icons/Mr. Bomb.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 5px 0 5px 35px;
+    margin: .4em 0;
+}
+
+li.Checked  {
+    background-image: url('/Content/Images/Icons/Clear Green Button.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 5px 0 5px 35px;
+    margin: .4em 0;
+}
+
+li.Crossed  {
+    background-image: url('/Content/Images/Icons/Help Purple Button.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 5px 0 5px 35px;
+    margin: .4em 0;
+}
+
+li.ActiveHover 
+{
+    background-color:#99FFCC;
+    
+}

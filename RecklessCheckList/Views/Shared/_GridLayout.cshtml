@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Grid Test</title>
+    <link href="@Url.Content("~/Content/Grid.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Navigation.css")" rel="stylesheet" type="text/css" />
+   
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+    <script src="Scripts/Site.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container_12">
+        <div class="grid_12 topBanner">
+            <div class="grid_6 alpha appLogo"><h1>The Reckless Checklist</h1></div>
+            <div class="grid_6 omega logo"><img  src="@Url.Content("~/Content/Images/ReckTechLogo72ppi_Red.png")"</div>
+        </div>
+        <div class="grid_12 navBar">Buttons</div>
+        
+        @RenderBody()
+        
+        <div class="grid_12">
+            <div class="grid_10 alpha">Home - Products - Blog</div>
+            <div class="grid_2 omega"><img src="@Url.Content("~/Content/Images/ReckTechIcon72ppi_Red.png")"</div>
+        </div>
+    </div>
+</body>
+</html>
